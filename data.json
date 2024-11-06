@@ -1,0 +1,53 @@
+{
+    "categories": [
+        {
+            "name": "Men's Wear",
+            "items": [
+                "Color Block Pullover",
+                "Thermal Long Sleeve Casual",
+                "Color Block Pullover & Long Pants"
+            ]
+        },
+        {
+            "name": "Women's Wear",
+            "items": [
+                "Mule Heels",
+                "Women's Blouse",
+                "Multi-Colored Dress",
+                "Chunky Heel",
+                "Denim Ripped Shorts",
+                "Black Sweater Dress",
+                "Denim Shorts"
+            ]
+        },
+        {
+            "name": "Kids Wear",
+            "items": [
+                "Daddy's Girl Bodysuit",
+                "Mummy's World Romper",
+                "Girl's Floral Romper",
+                "Casual Stripped Two-Piece"
+            ]
+        },
+        {
+            "name": "Accessories and Skin Care",
+            "items": [
+                "Digital Watch",
+                "Rikview White Press on Nails",
+                "Camellia Press on Nails",
+                "Jewelry Organizer",
+                "Tumeric Skin Care Set"
+            ]
+        },
+        {
+            "name": "Home Decor and Event Sets",
+            "items": [
+                "Baloon Decoration Kit (Black & Rose Gold)",
+                "Baloon Decoration Kit (Red, White, Gold)",
+                "Baloon Decoration Kit (Green, White, Blue)",
+                "Baloon Decoration Kit (Green, White, Blue)",
+                "Dimmable LED Mirror"
+            ]
+        }
+    ]
+}

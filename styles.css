@@ -1,0 +1,622 @@
+/* Reset and Basic Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: whitesmoke; /* Updated Background Color */
+    color: rgb(134, 80, 8); /* Updated Text Color */
+}
+
+/* Header and Navigation */
+header {
+    display: flex;
+    align-items: center; /* Aligns items vertically centered */
+    justify-content: space-between;
+    width: 100%;
+    padding: 15px 30px;
+    background-color: rgba(151, 90, 11, 0.377); /* Keep the same background for header */
+    color: rgb(134, 80, 8); /* Updated Text Color */
+}
+
+header .logo {
+    height: auto; /* Set height for the logo image */
+    width: 100px;  /* Maintain aspect ratio */
+    margin-right: 0; /* Add space between logo and text */
+}
+
+header h2 {
+    font-size: 1.5em; /* Adjust font size */
+    color: rgb(134, 80, 8);   /* Set text color */
+    margin: 0;       /* Remove default margin */
+}
+
+header nav {
+    display: flex; /* Display navigation links */
+    gap: 20px; /* Space between links */
+    text-align: center;
+
+}
+
+header nav a {
+    color: rgb(134, 80, 8); /* Updated Link Color */
+    text-decoration: none;
+    font-size: x-large;
+}
+
+
+header nav a:hover {
+    color: #ffdd57;
+}
+
+/* Hamburger Menu Icon */
+.hamburger {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    width: 40px;
+    height: 6px;
+    background-color: rgb(124, 81, 16); /* Keep the same background for footer */
+    transition: background-color 0.3s;
+}
+
+.hamburger:hover .bar {
+        background-color: rgba(109, 69, 9, 0.829);
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* Dimming overlay */
+        url('images/herobackground.webp'); /* Your background image */
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    padding: 120px 20px;
+    width: 100%;
+    height: 55vh;
+}
+
+.hero-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+}
+
+.hero-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: rgba(134, 80, 8, 0.8);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    text-decoration: none;
+}
+
+.hero-button:hover {
+    background-color: rgba(134, 80, 8, 0.9);
+}
+
+
+/* special offers and promotion */
+.special-offers {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #fff; /* Background color */
+}
+
+.special-offers h2 {
+    font-size: 2em;
+    color: rgb(134, 80, 8);
+    margin-bottom: 20px;
+}
+
+.offers-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between offer items */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.offer-item {
+    background-color: rgba(255, 221, 169, 0.603);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensure image does not overflow */
+    width: 300px; /* Fixed width for offer items */
+}
+
+.offer-item img {
+    width: 100%; /* Responsive images */
+}
+
+.offer-button {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 10px 20px;
+    background-color: rgb(134, 80, 8);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.offer-button:hover {
+    background-color: rgba(134, 80, 8, 0.9);
+}
+
+/* social media feed section */
+.social-media-feed {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: whitesmoke; /* Background color */
+}
+
+.social-media-feed h2 {
+    font-size: 2em;
+    color: rgb(134, 80, 8);
+    margin-bottom: 20px;
+}
+
+.social-media-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between social media items */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.social-media-item {
+    width: 200px; /* Fixed width for social media items */
+    border-radius: 8px;
+    overflow: hidden; /* Ensure image does not overflow */
+}
+
+.social-media-item img {
+    width: 100%; /* Responsive images */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+
+/* Featured Section Styling */
+.featured-section {
+    display: flex;
+    gap: 20px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.new-arrivals, .trending {
+    flex: 1;
+    padding: 20px;
+    background-color: rgba(214, 196, 169, 0.719); /* Keep the same background for footer */
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Carousel Styles */
+.carousel-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.carousel {
+    flex: 1;
+    text-align: center;
+}
+
+.carousel-items {
+    display: flex;
+    overflow: hidden; /* Hide overflow for sliding effect */
+    position: relative;
+}
+
+.carousel-item {
+    min-width: 100%; /* Each item takes full width of the container */
+    transition: transform 0.5s ease; /* Smooth transition for sliding */
+}
+
+.carousel-item img {
+    width: 100%; /* Responsive images */
+    border-radius: 8px; /* Add some rounding */
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.carousel-indicators span {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: hsl(0, 1%, 79%);
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.carousel-indicators span.active {
+    background-color: rgb(146, 92, 12); /* Keep the same background for footer */
+}
+
+/* Collections Section */
+.collections {
+    padding: 40px 20px;
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+}
+
+.collections h2 {
+    font-size: 2em;
+    color: rgb(134, 80, 8); /* Updated Heading Color */
+    margin-bottom: 20px;
+    
+}
+
+.collection-items {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    max-width: 1200px;
+    margin: 0 auto;
+    
+}
+
+.collection-item {
+    background-color: rgba(255, 221, 169, 0.603); /* Keep the same background for footer */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden; /* Ensure image does not overflow */
+}
+
+.collection-item img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove bottom space from inline images */
+}
+
+.collection-item h3 {
+    padding: 10px; /* Add some padding for the title */
+    font-weight: bold; /* Make title bold */
+    background-color: rgba(255, 221, 169, 0.603); /* Keep the same background for footer */
+    color: rgb(134, 80, 8); /* Updated Text Color */
+}
+
+.collection-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.feature-explore-btn{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: rgba(134, 80, 8, 0.8);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    text-decoration: none;
+
+}
+.feature-explore-btn:hover{
+    background-color: rgb(110, 66, 9);
+    cursor: pointer;
+
+}
+
+
+/* Testimonials Section */
+.testimonials {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: whitesmoke;
+    width: 100%;
+}
+
+.testimonials h2 {
+    font-size: 2em;
+    color: rgb(134, 80, 8);
+    margin-bottom: 15px;
+}
+
+.testimony-carousel-container {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center align elements horizontally */
+}
+
+.testimony-carousel-items { /* Updated class name */
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%; /* Ensure items take the full width */
+}
+
+.testimonial-item {
+    min-width: 100%; /* Full width for sliding */
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.testimonial-item i {
+    font-size: 50px;
+    color: rgb(134, 80, 8);
+    margin-bottom: 10px;
+}
+
+.testimony-carousel-indicators { /* Updated class name */
+    display: flex;
+    justify-content: center; /* Center indicators */
+    margin-top: 10px;
+    position: absolute; /* Position indicators at the bottom */
+    bottom: 10px; /* Adjust the distance from the bottom */
+    left: 50%; /* Center indicators horizontally */
+    transform: translateX(-50%); /* Offset left position */
+}
+
+.testimony-carousel-indicators span { /* Updated class name */
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: hsl(0, 1%, 79%);
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.testimony-carousel-indicators span.active { /* Updated class name */
+    background-color: rgb(146, 92, 12);
+}
+
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Navigation for Mobile */
+    header {
+        padding: 5px 15px;
+
+    }
+    
+    header .logo {
+        height: auto; /* Set height for the logo image */
+        width: 100px;  /* Maintain aspect ratio */
+        margin-right: 0; /* Add space between logo and text */
+    }
+    
+    header h2 {
+        font-size: 1.9em; /* Adjust font size */
+        color: rgb(134, 80, 8);   /* Set text color */
+        margin-right: 0;       /* Remove default margin */
+    }
+    header .logo {
+        height: auto; /* Set height for the logo image */
+        width: 90px;  /* Maintain aspect ratio */
+        margin-right: -17px; /* Add space between logo and text */
+    }
+    
+    header h2 {
+        font-size: 1.3em; /* Adjust font size */
+        color: rgb(134, 80, 8);   /* Set text color */
+        margin: 0;       /* Remove default margin */
+    }
+    header nav {
+        display: none; /* Hide navigation by default */
+        flex-direction: column;
+        background-color: rgb(238, 220, 192); /* Keep the same background for header */
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    header nav a{
+        font-size: x-large;
+        font-weight: bold;
+    }
+
+    header nav.active {
+        display: flex; /* Show navigation when active */
+    }
+
+    /* Hero Section Adjustments */
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    /* Collection Items Grid */
+    .collection-items {
+        grid-template-columns: 1fr;
+    }
+
+    /* Show Hamburger Icon on Mobile */
+    .hamburger {
+        display: flex; /* Show hamburger icon on mobile */
+    }
+
+    /* Featured Section Adjustments */
+    .featured-section {
+        display: flex; /* Ensure the parent is flex */
+        flex-direction: column; /* Stack the child items */
+    }
+
+    .carousel-container {
+        width: 100%; /* Make sure the container is full width */
+        display: block; /* Prevent potential flex alignment issues */
+    }
+
+    .new-arrivals, .trending {
+        width: 100%; /* Ensure full width */
+        display: block; /* Force block layout */
+        margin-bottom: 20px; /* Add space between sections */
+    }
+
+    /* Ensure New Arrivals is first */
+    .new-arrivals, .trending {
+        width: 100%; /* Make each section full width */
+    }
+
+    /* Ensure Trending is second */
+    .trending {
+        order: 2; /* Ensure trending is at the bottom */
+    }
+}
+
+
+
+/* get in touch section */
+.get-in-touch {
+    background-color: #f4f4f4;
+    padding: 40px;
+    margin-top: 30px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.get-in-touch h2 {
+    font-size: 2rem;
+    color: rgb(122, 77, 18)#333;
+    margin-bottom: 15px;
+}
+
+.get-in-touch p {
+    font-size: 1rem;
+    color: rgb(122, 77, 18);
+    margin-bottom: 25px;
+}
+
+.get-in-touch button {
+    background-color: rgb(122, 77, 18);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.get-in-touch button a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.get-in-touch button:hover {
+    background-color: rgb(73, 45, 8);
+}
+
+
+
+/* footer section */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(80, 48, 6, 0.959);
+    color: whitesmoke; /* Updated Text Color */
+    width: 100%;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column; /* Stack vertically by default */
+    align-items: center; /* Center align items */
+    justify-content: center; /* Center content */
+    gap: 0; /* Remove gap for mobile */
+}
+
+/* Social Icons Section */
+.social-icons {
+    margin-top: 10px;
+}
+
+/* Social Icons */
+.social-icons a {
+    color: whitesmoke; /* Set text color */
+    margin: 0 10px; /* Space between icons */
+    font-size: 1.5em; /* Adjust icon size */
+    transition: color 0.3s; /* Smooth color transition */
+    text-decoration: none; /* Remove underline */
+}
+
+.social-icons a:hover {
+    color: #ffdd57; /* Change color on hover */
+}
+
+/* Contact Info Styles */
+.contact-info {
+    margin: 20px 0; /* Add spacing between sections */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-aligns the content */
+    text-align: center; /* Centers the text */
+}
+
+/* Contact Info Links */
+.contact-info a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: bolder;
+}
+
+/* Legal Information Styles */
+.legal-info {
+    margin: 5px 0; /* Add spacing between sections */
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+    .footer-container {
+        flex-direction: row; /* Change to horizontal layout */
+        justify-content: space-between; /* Evenly space out the sections */
+        width: 100%; /* Full width for the footer */
+        gap: 0; /* Remove default gap */
+    }
+
+    .social-icons,
+    .contact-info,
+    .legal-info {
+        flex: 1; /* Allow equal space for each section */
+        padding: 0 10px; /* Add horizontal padding for spacing */
+        margin: 0; /* Reset margin */
+    }
+}
+

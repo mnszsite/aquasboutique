@@ -1,0 +1,114 @@
+/* Contact Page Styling */
+.contact-page {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f6f6f6; /* Softer background */
+}
+
+.contact-page h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: rgb(134, 80, 8);
+    font-family: 'Poppins', sans-serif; /* Modern font */
+}
+
+.contact-page p {
+    font-size: 1.1em;
+    margin: 15px 0;
+    color: #333;
+    line-height: 1.5; /* Improved readability */
+}
+
+.contact-info {
+    margin: 20px 0;
+    font-size: 1.1em;
+}
+
+/* Contact Form */
+.contact-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Softer shadow for depth */
+    transition: transform 0.3s ease-in-out;
+}
+
+.contact-form:hover {
+    transform: translateY(-5px); /* Subtle hover lift */
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+    font-family: 'Poppins', sans-serif; /* Consistent font */
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+    border-color: rgb(161, 93, 4);
+    box-shadow: 0 0 5px rgba(161, 93, 4, 0.5);
+    outline: none;
+}
+
+.contact-form button {
+    padding: 12px;
+    background-color: rgb(161, 93, 4);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    font-family: 'Poppins', sans-serif;
+}
+
+.contact-form button:hover {
+    background-color: rgb(219, 139, 33);
+    transform: translateY(-3px);
+}
+
+/* Radio Button Styling */
+.contact-form .radio-group {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+}
+
+.contact-form .radio-group label {
+    font-weight: normal;
+    color: #444;
+}
+
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .contact-page h1 {
+        font-size: 2em;
+    }
+    
+    .contact-form {
+        padding: 15px;
+    }
+}

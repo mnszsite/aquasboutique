@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aquas Boutique - Contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+<!-- Header Section with Hamburger Menu -->
+<header>
+    <img src="images/logo-removebg-preview.png" alt="Aquas Boutique Logo" class="logo" /> <!-- Replace 'logo.png' with your logo file name -->
+    <h2>AQUAS BOUTIQUE</h2>
+    
+    <!-- Hamburger Icon -->
+    <div class="hamburger" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    
+    <!-- Navigation Menu -->
+    <nav id="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="collections.html">Collections</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+    <!-- Contact Section -->
+    <section class="contact-page">
+        <h1>Contact Us</h1>
+        <p>We’d love to hear from you! Whether you have questions, feedback, or just want to say hello, feel free to reach out.</p>
+
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <p><strong>Email:</strong> aquacina1241@gmail.com</p>
+            <p><strong>Phone:</strong> +675 7956 3278</p>
+            <p><strong>Address:</strong> Aquas Boutique, Port Moresby, Papua New Guinea</p>
+        </div>
+
+<!-- Contact Form -->
+<div class="contact-form">
+    <form action="submit_form.php" method="POST">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="category">Select Category</label>
+        <select id="category" name="category">
+            <!-- Categories will be populated here by JS -->
+        </select>
+
+        <label for="item">Select Item</label>
+        <select id="item" name="item">
+            <!-- Items will be populated here by JS -->
+        </select>
+
+        <label for="sendOption">Send via:</label>
+        <select id="sendOption" name="sendOption">
+            <option value="whatsapp">WhatsApp</option>
+            <option value="email">Email</option>
+        </select>
+        
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="button" onclick="sendMessage()">Send Message</button>
+    </form>
+</div>
+
+</section>
+
+
+<!-- Footer Section -->
+<footer>
+    <div class="footer-container">
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+            <h3>Follow Us</h3>
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
+        
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <h3>Our Contacts</h3>
+            <p><a href="tel:+67579563278"><i class="fas fa-phone-alt"></i> +675 7956 3278</a></p>
+            <p><a href="mailto:aquacina1241@gmail.com"><i class="fas fa-envelope"></i> aquacina1241@gmail.com</a></p>
+            <p><i class="fas fa-map-marker-alt"></i> Aquas Boutique, Port Moresby, PNG</p>
+        </div>
+
+        <!-- Legal Information -->
+        <div class="legal-info">
+            <p>&copy; 2024 Aquas Boutique</p>
+            <p>Designed By: <a href="https://mnszsite.github.io/mnszsite" style="text-decoration: none; color: blue;">MnszSITE.aw</a></p>
+        </div>
+    </div>
+</footer>
+<script src="script.js"></script>
+
+<script>
+   // Function to load JSON data
+    async function loadData() {
+        try {
+            const response = await fetch('data.json'); // Adjust the path as necessary
+            const data = await response.json();
+            populateCategoryDropdown(data.categories);
+        } catch (error) {
+            console.error('Error loading data:', error);
+        }
+    }
+
+    // Populate category dropdown
+    function populateCategoryDropdown(categories) {
+        const categorySelect = document.getElementById('category');
+
+        categories.forEach(category => {
+            const option = document.createElement('option');
+            option.value = category.name;
+            option.textContent = category.name;
+            categorySelect.appendChild(option);
+        });
+
+        // Add event listener to update item dropdown when category changes
+        categorySelect.addEventListener('change', function () {
+            const selectedCategory = categories.find(cat => cat.name === this.value);
+            populateItemDropdown(selectedCategory ? selectedCategory.items : []);
+        });
+
+        // Trigger change to populate items for the first category
+        categorySelect.dispatchEvent(new Event('change'));
+    }
+
+    // Populate item dropdown
+    function populateItemDropdown(items) {
+        const itemSelect = document.getElementById('item');
+        itemSelect.innerHTML = ''; // Clear existing options
+
+        items.forEach(item => {
+            const option = document.createElement('option');
+            option.value = item;
+            option.textContent = item;
+            itemSelect.appendChild(option);
+        });
+    }
+
+    // Function to send the message via WhatsApp or Email
+    function sendMessage() {
+        const name = document.getElementById('name');
+        const email = document.getElementById('email');
+        const category = document.getElementById('category');
+        const item = document.getElementById('item');
+        const message = document.getElementById('message');
+        const sendOption = document.getElementById('sendOption');
+
+        let isValid = true;
+
+        // Check for missing input and display notifications directly in fields
+        [name, email, category, item, message].forEach(field => {
+            if (!field.value.trim()) {
+                field.style.border = '2px solid red';
+                isValid = false;
+            } else {
+                field.style.border = ''; // Reset border if valid
+            }
+        });
+
+        if (!isValid) {
+            return; // Exit if validation fails
+        }
+
+        const selectedItem = item.value;
+        const messageContent = message.value.trim();
+        const fullMessage = encodeURIComponent(`I would like to inquire about: ${selectedItem}\n\nMessage: ${messageContent}`);
+
+        if (sendOption.value === 'whatsapp') {
+            const whatsappURL = `https://wa.me/67579563278?text=${fullMessage}`;
+            window.open(whatsappURL, '_blank'); // Open WhatsApp
+        } else if (sendOption.value === 'email') {
+            const emailURL = `mailto:aquacina1241@gmail.com?subject=Inquiry about ${selectedItem}&body=${fullMessage}`;
+            window.open(emailURL, '_blank'); // Open Email
+        }
+    }
+
+    // Load data when the page is loaded
+    window.onload = loadData;
+</script>
+
+
+</body>
+</html>
